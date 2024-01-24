@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dimensions Form</title>
+</head>
+<body>
+    {% extends 'layout.html' %}
+
+    {% block content %}
+        <h1>Dimensions</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {% for dimension in dimensions %}
+                <div class="form-group">
+                    {{ form[dimension].label(class="form-control-label", text='') }}
+                    {{ form[dimension].value(class="form-control") }}
+                </div>
+            {% endfor %}
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+    {% endblock %}
+</body>
+</html>
